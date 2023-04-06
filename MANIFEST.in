@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include barcode_updation *.css
+recursive-include barcode_updation *.csv
+recursive-include barcode_updation *.html
+recursive-include barcode_updation *.ico
+recursive-include barcode_updation *.js
+recursive-include barcode_updation *.json
+recursive-include barcode_updation *.md
+recursive-include barcode_updation *.png
+recursive-include barcode_updation *.py
+recursive-include barcode_updation *.svg
+recursive-include barcode_updation *.txt
+recursive-exclude barcode_updation *.pyc
