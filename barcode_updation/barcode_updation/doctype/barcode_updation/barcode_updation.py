@@ -12,14 +12,14 @@ class BarcodeUpdation(Document):
     pass
 
 @frappe.whitelist()
-def add_item_barcode(item_code,barcode,barcode_uom):
+def add_item_barcode(item_code,barcode,posa_uom):
     item = frappe.get_doc('Item', item_code)
    
     item.append(
         "barcodes",
         {
              "barcode": barcode,
-             "barcode_uom": barcode_uom,
+             "posa_uom": posa_uom,
         },
     )
     item.save(ignore_permissions=True)

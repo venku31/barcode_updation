@@ -60,7 +60,7 @@ fixtures = [
                 "name",
                 "in",
                 [
-				"Item Barcode-barcode_uom",
+				"Item Barcode-posa_uom",
                 ],
             ],
         ],

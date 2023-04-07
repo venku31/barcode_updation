@@ -94,7 +94,7 @@ frappe.ui.form.on('Barcode Updation', {
 				args: {
 				   'item_code' : frm.doc.item,
 				   'barcode' : frm.doc.update_barcode,
-				   'barcode_uom':frm.doc.barcode_uom,
+				   'posa_uom':frm.doc.barcode_uom,
 				},
 				callback(r) {
 				   if (r.message){
