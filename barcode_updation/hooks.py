@@ -52,7 +52,20 @@ app_license = "MIT"
 
 # automatically create page for each record of this doctype
 # website_generators = ["Web Page"]
-
+fixtures = [
+    {
+        "doctype": "Custom Field",
+        "filters": [
+            [
+                "name",
+                "in",
+                [
+				"Item Barcode-barcode_uom",
+                ],
+            ],
+        ],
+    },
+]
 # Installation
 # ------------
 
