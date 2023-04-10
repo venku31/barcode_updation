@@ -1,0 +1,121 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "TAG.####",
+ "creation": "2023-03-15 20:53:26.177475",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "section_break_2",
+  "item_group",
+  "column_break_4",
+  "item",
+  "section_break_3",
+  "item_tag_details",
+  "amended_from",
+  "print_section_section",
+  "letter_head",
+  "column_break_11",
+  "auto_repeat",
+  "update_auto_repeat_reference"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "item_group",
+   "fieldtype": "Link",
+   "label": "Item Group",
+   "options": "Item Group"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item ",
+   "options": "Item"
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "item_tag_details",
+   "fieldtype": "Table",
+   "label": "Item Tag Details",
+   "options": "Item Tag Details"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Item Tag Print",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "print_section_section",
+   "fieldtype": "Section Break",
+   "label": "Print Section"
+  },
+  {
+   "fieldname": "letter_head",
+   "fieldtype": "Link",
+   "label": "Letter Head",
+   "options": "Letter Head"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "auto_repeat",
+   "fieldtype": "Link",
+   "label": "Auto Repeat",
+   "options": "Auto Repeat"
+  },
+  {
+   "depends_on": "eval: doc.auto_repeat",
+   "fieldname": "update_auto_repeat_reference",
+   "fieldtype": "Button",
+   "label": "Update Auto Repeat Reference"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-04-10 08:05:56.630279",
+ "modified_by": "Administrator",
+ "module": "Barcode Updation",
+ "name": "Item Tag Print",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
