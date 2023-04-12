@@ -65,3 +65,18 @@ frappe.ui.form.on('Item Tag Print', {
 
 
 // }
+frappe.ui.form.on('Item Tag Print', {
+refresh: function(frm) {
+frm.add_custom_button(__("Print Tag"), function() {
+            var w = window.open("/printview?doctype=Item%20Tag%20Print&name=" + cur_frm.doc.name + "&trigger_print=1&format=ItemTag&no_letterhead=1&_lang=es");
+
+            if(!w) {
+                frappe.msgprint(__("Please enable pop-ups")); return;
+            }
+         }).css({'color':'white','font-weight': 'bold', 'background-color': 'blue'});
+  
+  },
+
+
+
+})
