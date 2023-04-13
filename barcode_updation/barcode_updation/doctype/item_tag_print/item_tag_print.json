@@ -11,6 +11,8 @@
   "section_break_2",
   "item_group",
   "column_break_4",
+  "country",
+  "column_break_nra8k",
   "item",
   "section_break_3",
   "item_tag_details",
@@ -93,11 +95,21 @@
    "fieldname": "update_auto_repeat_reference",
    "fieldtype": "Button",
    "label": "Update Auto Repeat Reference"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "column_break_nra8k",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-10 08:05:56.630279",
+ "modified": "2023-04-13 19:10:36.632458",
  "modified_by": "Administrator",
  "module": "Barcode Updation",
  "name": "Item Tag Print",

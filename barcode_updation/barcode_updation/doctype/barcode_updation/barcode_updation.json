@@ -20,6 +20,9 @@
   "sec_break",
   "item_image",
   "update_image",
+  "verify",
+  "verify_button",
+  "verified_by",
   "col_break2",
   "image"
  ],
@@ -122,12 +125,29 @@
    "fieldtype": "Link",
    "label": "Barcode UOM",
    "options": "UOM"
+  },
+  {
+   "default": "0",
+   "fieldname": "verify",
+   "fieldtype": "Check",
+   "label": "Verify"
+  },
+  {
+   "fieldname": "verify_button",
+   "fieldtype": "Button",
+   "label": "Verify"
+  },
+  {
+   "fieldname": "verified_by",
+   "fieldtype": "Data",
+   "label": "Verified By",
+   "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-04-07 12:52:49.126851",
+ "modified": "2023-04-12 10:31:43.063573",
  "modified_by": "Administrator",
  "module": "Barcode Updation",
  "name": "Barcode Updation",

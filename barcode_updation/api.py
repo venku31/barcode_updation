@@ -15,3 +15,8 @@ def get_barcode(item):
 	# barcode = frappe.db.get_value("Item Barcode",{"parent": item}, "barcode")
 	barcode = frappe.get_all('Item Barcode', filters={'parent':item}, fields=['barcode'],limit =1)
 	return barcode
+
+@frappe.whitelist()
+def get_country_fields_details(country):
+	fields = frappe.db.sql("""select `tabWebsite Item`.name as website_item,`tabWebsite Item`.item_code,`tabWebsite Item`.web_item_name,`tabWebsite Item`.website_image,`tabItem`.country_of_origin from `tabWebsite Item` left join `tabItem` ON(`tabWebsite Item`.item_code=`tabItem`.item_code) where `tabItem`.country_of_origin = %s """,(country), as_dict=1)
+	return fields

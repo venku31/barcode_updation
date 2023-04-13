@@ -11,6 +11,10 @@ frappe.ui.form.on('Item Tag Print', {
 			get_website_item(frm);
 	
 		},
+	country : function(frm){
+		get_country_item(frm);
+	
+		},
 		// validate : function(frm){
 		// 	get_barcode(frm);
 	
@@ -45,6 +49,35 @@ frappe.ui.form.on('Item Tag Print', {
 	// 	})
 	
 	}
+		
+	function get_country_item(frm) {
+		console.log("1")
+		frappe.call({
+		  "method": "barcode_updation.api.get_country_fields_details",
+		  "args": {
+			"country": frm.doc.country,
+		   },
+		  callback: function (r) {
+			console.log(r)
+			cur_frm.clear_table("item_tag_details");
+			r.message.forEach(fields => {
+			  var child = cur_frm.add_child("item_tag_details");
+			  frappe.model.set_value(child.doctype, child.name, "item_code", fields.item_code)
+			  frappe.model.set_value(child.doctype, child.name, "website_item_name", fields.website_item)
+			  frappe.model.set_value(child.doctype, child.name, "description", fields.web_item_name)
+			  frappe.model.set_value(child.doctype, child.name, "website_image", fields.website_image)
+			 
+			  });
+			cur_frm.refresh_fields()
+				
+		  }
+		  
+		});
+// 	cur_frm.fields_dict.my_field.$input.on("click", function(evt){
+
+// 	})
+
+}
 
 // 	function get_barcode(frm) {
 // 		console.log("1")
