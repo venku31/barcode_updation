@@ -7,18 +7,27 @@
 // 	// }
 // });
 frappe.ui.form.on('Item Tag Print', {
+	
 	item_group : function(frm){
 			get_website_item(frm);
-	
+			cur_frm.refresh_fields()
 		},
 	country : function(frm){
 		get_country_item(frm);
-	
+		cur_frm.refresh_fields()
 		},
-		// validate : function(frm){
-		// 	get_barcode(frm);
+	item : function(frm){
+		get_item(frm);
+			},
+	refresh : function(frm){
+			// get_country_item(frm);
+			get_website_item(frm);
+			// cur_frm.save()
+			},
+	// validate : function(frm){
+	// 	 get_country_item(frm);
+	// 			}
 	
-		// }
 	})
 	
 		function get_website_item(frm) {
@@ -27,6 +36,7 @@ frappe.ui.form.on('Item Tag Print', {
 			  "method": "barcode_updation.api.get_fields_details",
 			  "args": {
 				"item_group": frm.doc.item_group,
+				"country": frm.doc.country,
 			   },
 			  callback: function (r) {
 				console.log(r)
@@ -56,6 +66,7 @@ frappe.ui.form.on('Item Tag Print', {
 		  "method": "barcode_updation.api.get_country_fields_details",
 		  "args": {
 			"country": frm.doc.country,
+			"item_group": frm.doc.item_group,
 		   },
 		  callback: function (r) {
 			console.log(r)
@@ -78,7 +89,34 @@ frappe.ui.form.on('Item Tag Print', {
 // 	})
 
 }
+function get_item(frm) {
+	console.log("1")
+	frappe.call({
+	  "method": "barcode_updation.api.get_item_details",
+	  "args": {
+		"item": frm.doc.item,
+	   },
+	  callback: function (r) {
+		console.log(r)
+		cur_frm.clear_table("item_tag_details");
+		r.message.forEach(fields => {
+		  var child = cur_frm.add_child("item_tag_details");
+		  frappe.model.set_value(child.doctype, child.name, "item_code", fields.item_code)
+		  frappe.model.set_value(child.doctype, child.name, "website_item_name", fields.website_item)
+		  frappe.model.set_value(child.doctype, child.name, "description", fields.web_item_name)
+		  frappe.model.set_value(child.doctype, child.name, "website_image", fields.website_image)
+		 
+		  });
+		cur_frm.refresh_fields()
+			
+	  }
+	  
+	});
+// 	cur_frm.fields_dict.my_field.$input.on("click", function(evt){
 
+// 	})
+
+}
 // 	function get_barcode(frm) {
 // 		console.log("1")
 // 		frappe.call({
@@ -101,7 +139,7 @@ frappe.ui.form.on('Item Tag Print', {
 frappe.ui.form.on('Item Tag Print', {
 refresh: function(frm) {
 frm.add_custom_button(__("Print Tag"), function() {
-            var w = window.open("/printview?doctype=Item%20Tag%20Print&name=" + cur_frm.doc.name + "&trigger_print=1&format=ItemTag&no_letterhead=1&_lang=es");
+            var w = window.open("/printview?doctype=Item%20Tag%20Print&name=" + cur_frm.doc.name + "&trigger_print=1&format=" + cur_frm.doc.print_format + "&no_letterhead=1&_lang=es");
 
             if(!w) {
                 frappe.msgprint(__("Please enable pop-ups")); return;

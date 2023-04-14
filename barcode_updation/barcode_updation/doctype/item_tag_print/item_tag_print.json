@@ -17,6 +17,8 @@
   "section_break_3",
   "item_tag_details",
   "amended_from",
+  "section_break_rm6gv",
+  "print_format",
   "print_section_section",
   "letter_head",
   "column_break_11",
@@ -72,6 +74,7 @@
   {
    "fieldname": "print_section_section",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Print Section"
   },
   {
@@ -105,11 +108,22 @@
   {
    "fieldname": "column_break_nra8k",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_rm6gv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "ItemTag",
+   "fieldname": "print_format",
+   "fieldtype": "Select",
+   "label": "Print Format",
+   "options": "ItemTag\nItem Tag 20Cm X 4.5Cm\nItem Tag 15Cm X 7Cm"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-13 19:10:36.632458",
+ "modified": "2023-04-14 11:10:53.432778",
  "modified_by": "Administrator",
  "module": "Barcode Updation",
  "name": "Item Tag Print",
