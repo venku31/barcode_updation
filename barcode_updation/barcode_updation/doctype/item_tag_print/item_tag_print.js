@@ -21,7 +21,7 @@ frappe.ui.form.on('Item Tag Print', {
 			},
 	refresh : function(frm){
 			// get_country_item(frm);
-			get_website_item(frm);
+			// get_website_item(frm);
 			// cur_frm.save()
 			},
 	// validate : function(frm){
