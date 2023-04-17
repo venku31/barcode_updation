@@ -47,7 +47,9 @@ frappe.ui.form.on('Item Tag Print', {
 				  frappe.model.set_value(child.doctype, child.name, "website_item_name", fields.website_item)
 				  frappe.model.set_value(child.doctype, child.name, "description", fields.web_item_name)
 				  frappe.model.set_value(child.doctype, child.name, "website_image", fields.website_image)
-				 
+				  frappe.model.set_value(child.doctype, child.name, "price", fields.price_list_rate)
+				  frappe.model.set_value(child.doctype, child.name, "uom", fields.uom)
+				  frappe.model.set_value(child.doctype, child.name, "country", fields.country)
 				  });
 				cur_frm.refresh_fields()
 					
@@ -77,7 +79,9 @@ frappe.ui.form.on('Item Tag Print', {
 			  frappe.model.set_value(child.doctype, child.name, "website_item_name", fields.website_item)
 			  frappe.model.set_value(child.doctype, child.name, "description", fields.web_item_name)
 			  frappe.model.set_value(child.doctype, child.name, "website_image", fields.website_image)
-			 
+			  frappe.model.set_value(child.doctype, child.name, "price", fields.price_list_rate)
+			  frappe.model.set_value(child.doctype, child.name, "uom", fields.uom)
+			  frappe.model.set_value(child.doctype, child.name, "country", fields.country)
 			  });
 			cur_frm.refresh_fields()
 				
@@ -105,7 +109,9 @@ function get_item(frm) {
 		  frappe.model.set_value(child.doctype, child.name, "website_item_name", fields.website_item)
 		  frappe.model.set_value(child.doctype, child.name, "description", fields.web_item_name)
 		  frappe.model.set_value(child.doctype, child.name, "website_image", fields.website_image)
-		 
+		  frappe.model.set_value(child.doctype, child.name, "price", fields.price_list_rate)
+		  frappe.model.set_value(child.doctype, child.name, "uom", fields.uom)
+		  frappe.model.set_value(child.doctype, child.name, "country", fields.country)
 		  });
 		cur_frm.refresh_fields()
 			

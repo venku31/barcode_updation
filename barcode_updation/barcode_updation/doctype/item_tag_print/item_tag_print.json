@@ -8,6 +8,8 @@
  "engine": "InnoDB",
  "field_order": [
   "company",
+  "column_break_207l4",
+  "scan_barcode",
   "section_break_2",
   "item_group",
   "column_break_4",
@@ -119,11 +121,20 @@
    "fieldtype": "Select",
    "label": "Print Format",
    "options": "ItemTag\nItem Tag 20Cm X 4.5Cm\nItem Tag 15Cm X 7Cm"
+  },
+  {
+   "fieldname": "column_break_207l4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "scan_barcode",
+   "fieldtype": "Data",
+   "label": "Scan Barcode"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-14 11:10:53.432778",
+ "modified": "2023-04-17 15:44:01.513393",
  "modified_by": "Administrator",
  "module": "Barcode Updation",
  "name": "Item Tag Print",
