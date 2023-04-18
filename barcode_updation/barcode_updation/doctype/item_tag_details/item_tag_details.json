@@ -60,7 +60,7 @@
   },
   {
    "columns": 1,
-   "fetch_from": "website_item_name.price",
+   "default": "0.00",
    "fieldname": "price",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -97,7 +97,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-04-17 18:03:13.096658",
+ "modified": "2023-04-18 10:31:08.053615",
  "modified_by": "Administrator",
  "module": "Barcode Updation",
  "name": "Item Tag Details",

@@ -120,7 +120,7 @@
    "fieldname": "print_format",
    "fieldtype": "Select",
    "label": "Print Format",
-   "options": "ItemTag\nItem Tag 20Cm X 4.5Cm\nItem Tag 15Cm X 7Cm"
+   "options": "ItemTag\nItemTagOfferPrint\nItem Tag 20Cm X 4.5Cm\nItem Tag 15Cm X 7Cm"
   },
   {
    "fieldname": "column_break_207l4",
@@ -134,7 +134,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-17 15:44:01.513393",
+ "modified": "2023-04-18 10:05:58.516162",
  "modified_by": "Administrator",
  "module": "Barcode Updation",
  "name": "Item Tag Print",
