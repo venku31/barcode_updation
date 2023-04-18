@@ -56,9 +56,9 @@ frappe.ui.form.on('Item Tag Print', {
 			  }
 			  
 			});
-	// 	cur_frm.fields_dict.my_field.$input.on("click", function(evt){
+		cur_frm.fields_dict.my_field.$input.on("click", function(evt){
 	
-	// 	})
+		})
 	
 	}
 		
@@ -88,9 +88,9 @@ frappe.ui.form.on('Item Tag Print', {
 		  }
 		  
 		});
-// 	cur_frm.fields_dict.my_field.$input.on("click", function(evt){
+	cur_frm.fields_dict.my_field.$input.on("click", function(evt){
 
-// 	})
+	})
 
 }
 function get_item(frm) {
@@ -118,9 +118,9 @@ function get_item(frm) {
 	  }
 	  
 	});
-// 	cur_frm.fields_dict.my_field.$input.on("click", function(evt){
+	cur_frm.fields_dict.my_field.$input.on("click", function(evt){
 
-// 	})
+	})
 
 }
 // 	function get_barcode(frm) {
