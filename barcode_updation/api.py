@@ -15,7 +15,7 @@ def get_fields_details(item_group=None,country=None):
         fields = frappe.db.sql("""Select a.website_item,a.item_code,a.web_item_name,a.website_image,a.uom,a.price_list_rate,b.country
         From (select `tabWebsite Item`.name as website_item,`tabWebsite Item`.item_code,`tabWebsite Item`.web_item_name,`tabWebsite Item`.website_image,`tabWebsite Item`.item_group,`tabItem Price`.uom,`tabItem Price`.price_list_rate 
         from `tabWebsite Item`,`tabItem Price` 
-        where `tabWebsite Item`.item_code=`tabItem Price`.item_code and `tabItem Price`.price_list="Premium Shop Item Price")a
+        where `tabWebsite Item`.item_code=`tabItem Price`.item_code and `tabItem Price`.price_list="Premium Shop Selling")a
         LEFT JOIN 
         (select name,country_of_origin as country from `tabItem`)b ON (b.name=a.item_code) where b.country=%s and a.item_group=%s """,(country,item_group), as_dict=1)
         return fields
@@ -24,7 +24,7 @@ def get_fields_details(item_group=None,country=None):
         fields = frappe.db.sql("""Select a.website_item,a.item_code,a.web_item_name,a.website_image,a.uom,a.price_list_rate,b.country
         From (select `tabWebsite Item`.name as website_item,`tabWebsite Item`.item_code,`tabWebsite Item`.web_item_name,`tabWebsite Item`.website_image,`tabWebsite Item`.item_group,`tabItem Price`.uom,`tabItem Price`.price_list_rate 
         from `tabWebsite Item`,`tabItem Price` 
-        where `tabWebsite Item`.item_code=`tabItem Price`.item_code and `tabItem Price`.price_list="Premium Shop Item Price")a
+        where `tabWebsite Item`.item_code=`tabItem Price`.item_code and `tabItem Price`.price_list="Premium Shop Selling")a
         LEFT JOIN 
         (select name,country_of_origin as country from `tabItem`)b ON (b.name=a.item_code) where a.item_group=%s """,(item_group), as_dict=1)
         return fields
@@ -43,7 +43,7 @@ def get_country_fields_details(item_group=None,country=None):
         fields = frappe.db.sql("""Select a.website_item,a.item_code,a.web_item_name,a.website_image,a.uom,a.price_list_rate,b.country
         From (select `tabWebsite Item`.name as website_item,`tabWebsite Item`.item_code,`tabWebsite Item`.web_item_name,`tabWebsite Item`.website_image,`tabWebsite Item`.item_group,`tabItem Price`.uom,`tabItem Price`.price_list_rate 
         from `tabWebsite Item`,`tabItem Price` 
-        where `tabWebsite Item`.item_code=`tabItem Price`.item_code and `tabItem Price`.price_list="Premium Shop Item Price")a
+        where `tabWebsite Item`.item_code=`tabItem Price`.item_code and `tabItem Price`.price_list="Premium Shop Selling")a
         LEFT JOIN 
         (select name,country_of_origin as country from `tabItem`)b ON (b.name=a.item_code) where b.country=%s and a.item_group=%s """,(country,item_group), as_dict=1)
         return fields
@@ -52,7 +52,7 @@ def get_country_fields_details(item_group=None,country=None):
         fields = frappe.db.sql("""Select a.website_item,a.item_code,a.web_item_name,a.website_image,a.uom,a.price_list_rate,b.country
         From (select `tabWebsite Item`.name as website_item,`tabWebsite Item`.item_code,`tabWebsite Item`.web_item_name,`tabWebsite Item`.website_image,`tabWebsite Item`.item_group,`tabItem Price`.uom,`tabItem Price`.price_list_rate 
         from `tabWebsite Item`,`tabItem Price` 
-        where `tabWebsite Item`.item_code=`tabItem Price`.item_code and `tabItem Price`.price_list="Premium Shop Item Price")a
+        where `tabWebsite Item`.item_code=`tabItem Price`.item_code and `tabItem Price`.price_list="Premium Shop Selling")a
         LEFT JOIN 
         (select name,country_of_origin as country from `tabItem`)b ON (b.name=a.item_code) where b.country=%s """,(country), as_dict=1)
         return fields
@@ -61,7 +61,7 @@ def get_country_fields_details(item_group=None,country=None):
         fields = frappe.db.sql("""Select a.website_item,a.item_code,a.web_item_name,a.website_image,a.uom,a.price_list_rate,b.country
         From (select `tabWebsite Item`.name as website_item,`tabWebsite Item`.item_code,`tabWebsite Item`.web_item_name,`tabWebsite Item`.website_image,`tabWebsite Item`.item_group,`tabItem Price`.uom,`tabItem Price`.price_list_rate 
         from `tabWebsite Item`,`tabItem Price` 
-        where `tabWebsite Item`.item_code=`tabItem Price`.item_code and `tabItem Price`.price_list="Premium Shop Item Price")a
+        where `tabWebsite Item`.item_code=`tabItem Price`.item_code and `tabItem Price`.price_list="Premium Shop Selling")a
         LEFT JOIN 
         (select name,country_of_origin as country from `tabItem`)b ON (b.name=a.item_code) where a.item_group=%s """,(item_group), as_dict=1)
         return fields
@@ -72,7 +72,7 @@ def get_item_details(item):
         fields = frappe.db.sql("""Select a.website_item,a.item_code,a.web_item_name,a.website_image,a.uom,a.price_list_rate,b.country
         From (select `tabWebsite Item`.name as website_item,`tabWebsite Item`.item_code,`tabWebsite Item`.web_item_name,`tabWebsite Item`.website_image,`tabWebsite Item`.item_group,`tabItem Price`.uom,`tabItem Price`.price_list_rate 
         from `tabWebsite Item`,`tabItem Price` 
-        where `tabWebsite Item`.item_code=`tabItem Price`.item_code and `tabItem Price`.price_list="Premium Shop Item Price")a
+        where `tabWebsite Item`.item_code=`tabItem Price`.item_code and `tabItem Price`.price_list="Premium Shop Selling")a
         LEFT JOIN 
         (select name,country_of_origin as country from `tabItem`)b ON (b.name=a.item_code) where a.item_code=%s """,(item), as_dict=1)
         return fields
