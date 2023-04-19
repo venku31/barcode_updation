@@ -7,12 +7,19 @@
 // 	// }
 // });
 frappe.ui.form.on('Item Tag Print', {
-	
+	onload_post_render: function(frm) {
+            frm.get_field("get_data").$input.addClass('btn-primary');
+	},
 	item_group : function(frm){
 			get_website_item(frm);
 			cur_frm.refresh_fields()
 		},
 	country : function(frm){
+		get_country_item(frm);
+		cur_frm.refresh_fields()
+		},
+	get_data : function(frm){
+		get_website_item(frm);
 		get_country_item(frm);
 		cur_frm.refresh_fields()
 		},

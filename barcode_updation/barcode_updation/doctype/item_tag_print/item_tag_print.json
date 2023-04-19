@@ -16,6 +16,8 @@
   "country",
   "column_break_nra8k",
   "item",
+  "column_break_g1eaj",
+  "get_data",
   "section_break_3",
   "item_tag_details",
   "amended_from",
@@ -130,11 +132,20 @@
    "fieldname": "scan_barcode",
    "fieldtype": "Data",
    "label": "Scan Barcode"
+  },
+  {
+   "fieldname": "column_break_g1eaj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "get_data",
+   "fieldtype": "Button",
+   "label": "Get Data"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-18 10:05:58.516162",
+ "modified": "2023-04-19 07:40:24.574023",
  "modified_by": "Administrator",
  "module": "Barcode Updation",
  "name": "Item Tag Print",
