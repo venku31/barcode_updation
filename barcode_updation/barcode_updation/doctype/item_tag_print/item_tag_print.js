@@ -114,7 +114,7 @@ function get_item(frm) {
 	   },
 	  callback: function (r) {
 		console.log(r)
-		cur_frm.clear_table("item_tag_details");
+		// cur_frm.clear_table("item_tag_details");
 		r.message.forEach(fields => {
 		  var child = cur_frm.add_child("item_tag_details");
 		  frappe.model.set_value(child.doctype, child.name, "item_code", fields.item_code)

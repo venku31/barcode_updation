@@ -1,0 +1,159 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-04-20 11:16:57.305605",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "website_item_name",
+  "item_code",
+  "description",
+  "tag_description",
+  "uom1",
+  "price1",
+  "uom2",
+  "price2",
+  "uom3",
+  "price3",
+  "uom4",
+  "price4",
+  "country",
+  "website_image",
+  "barcode"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "website_item_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "website item",
+   "options": "Website Item",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fetch_from": "website_item_name.item_code",
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fetch_from": "website_item_name.description",
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Description",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "tag_description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Remarks"
+  },
+  {
+   "columns": 1,
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Country",
+   "options": "Country",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "website_item_name.website_image",
+   "fieldname": "website_image",
+   "fieldtype": "Attach Image",
+   "label": "Website Image"
+  },
+  {
+   "fetch_from": "website_item_name.barcode",
+   "fieldname": "barcode",
+   "fieldtype": "Data",
+   "label": "Barcode",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "uom1",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "UOM1",
+   "options": "UOM",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "default": "0.00",
+   "fieldname": "price1",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Price1",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "uom2",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "UOM2",
+   "options": "UOM"
+  },
+  {
+   "columns": 1,
+   "fieldname": "price2",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Price2"
+  },
+  {
+   "columns": 1,
+   "fieldname": "uom3",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "UOM3",
+   "options": "UOM"
+  },
+  {
+   "columns": 1,
+   "fieldname": "price3",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Price3"
+  },
+  {
+   "columns": 1,
+   "fieldname": "uom4",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "UOM4",
+   "options": "UOM"
+  },
+  {
+   "columns": 1,
+   "fieldname": "price4",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Price4"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-04-20 11:20:59.747621",
+ "modified_by": "Administrator",
+ "module": "Barcode Updation",
+ "name": "Item Tag Details Summary",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

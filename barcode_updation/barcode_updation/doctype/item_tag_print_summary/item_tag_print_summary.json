@@ -19,7 +19,7 @@
   "column_break_g1eaj",
   "get_data",
   "section_break_3",
-  "item_tag_details",
+  "item_tag_details_summary",
   "amended_from",
   "section_break_rm6gv",
   "print_format",
@@ -62,6 +62,7 @@
   {
    "fieldname": "country",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Country",
    "options": "Country"
   },
@@ -82,17 +83,12 @@
   {
    "fieldname": "get_data",
    "fieldtype": "Button",
+   "hidden": 1,
    "label": "Get Data"
   },
   {
    "fieldname": "section_break_3",
    "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "item_tag_details",
-   "fieldtype": "Table",
-   "label": "Item Tag Details",
-   "options": "Item Tag Details"
   },
   {
    "fieldname": "amended_from",
@@ -141,11 +137,16 @@
    "fieldname": "update_auto_repeat_reference",
    "fieldtype": "Button",
    "label": "Update Auto Repeat Reference"
+  },
+  {
+   "fieldname": "item_tag_details_summary",
+   "fieldtype": "Table",
+   "options": "Item Tag Details Summary"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-19 10:04:01.600884",
+ "modified": "2023-04-20 20:07:21.031588",
  "modified_by": "Administrator",
  "module": "Barcode Updation",
  "name": "Item Tag Print Summary",
