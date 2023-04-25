@@ -63,6 +63,7 @@ fixtures = [
 				"Item Barcode-posa_uom",
 				"Website Item-barcode",
 				"Website Item-price",
+				"Item Price-before",
                 ],
             ],
         ],

@@ -1,8 +1,8 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "TAG.####",
- "creation": "2023-03-15 20:53:26.177475",
+ "autoname": "TAGO.####",
+ "creation": "2023-04-21 14:44:53.291539",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -21,7 +21,7 @@
   "column_break_g1eaj",
   "get_data",
   "section_break_3",
-  "item_tag_details",
+  "item_tag_offer_details",
   "amended_from",
   "section_break_rm6gv",
   "print_format",
@@ -39,6 +39,25 @@
    "options": "Company"
   },
   {
+   "fieldname": "column_break_207l4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "scan_barcode",
+   "fieldtype": "Data",
+   "label": "Scan Barcode"
+  },
+  {
+   "fieldname": "column_break_ijbqk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "get_offer_data",
+   "fieldtype": "Button",
+   "hidden": 1,
+   "label": "Get Offer data"
+  },
+  {
    "fieldname": "section_break_2",
    "fieldtype": "Section Break"
   },
@@ -53,29 +72,54 @@
    "fieldtype": "Column Break"
   },
   {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "column_break_nra8k",
+   "fieldtype": "Column Break"
+  },
+  {
    "fieldname": "item",
    "fieldtype": "Link",
    "label": "Item ",
    "options": "Item"
   },
   {
-   "fieldname": "section_break_3",
-   "fieldtype": "Section Break"
+   "fieldname": "column_break_g1eaj",
+   "fieldtype": "Column Break"
   },
   {
-   "fieldname": "item_tag_details",
-   "fieldtype": "Table",
-   "label": "Item Tag Details",
-   "options": "Item Tag Details"
+   "fieldname": "get_data",
+   "fieldtype": "Button",
+   "hidden": 1,
+   "label": "Get Data"
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Item Tag Print",
+   "options": "Item Tag Offer Print",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "section_break_rm6gv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "ItemTag",
+   "fieldname": "print_format",
+   "fieldtype": "Select",
+   "label": "Print Format",
+   "options": "ItemTag\nItemTagOfferPrint\nItem Tag 20Cm X 4.5Cm\nItem Tag 15Cm X 7Cm"
   },
   {
    "fieldname": "print_section_section",
@@ -106,61 +150,18 @@
    "label": "Update Auto Repeat Reference"
   },
   {
-   "fieldname": "country",
-   "fieldtype": "Link",
-   "label": "Country",
-   "options": "Country"
-  },
-  {
-   "fieldname": "column_break_nra8k",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_rm6gv",
-   "fieldtype": "Section Break"
-  },
-  {
-   "default": "ItemTag",
-   "fieldname": "print_format",
-   "fieldtype": "Select",
-   "label": "Print Format",
-   "options": "ItemTag\nItemTagOfferPrint\nItem Tag 20Cm X 4.5Cm\nItem Tag 15Cm X 7Cm"
-  },
-  {
-   "fieldname": "column_break_207l4",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "scan_barcode",
-   "fieldtype": "Data",
-   "label": "Scan Barcode"
-  },
-  {
-   "fieldname": "column_break_g1eaj",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "get_data",
-   "fieldtype": "Button",
-   "label": "Get Data"
-  },
-  {
-   "fieldname": "get_offer_data",
-   "fieldtype": "Button",
-   "hidden": 1,
-   "label": "Get Offer data"
-  },
-  {
-   "fieldname": "column_break_ijbqk",
-   "fieldtype": "Column Break"
+   "fieldname": "item_tag_offer_details",
+   "fieldtype": "Table",
+   "label": "Item Tag Offer Details",
+   "options": "Item Tag Offer Details"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-25 09:00:37.248399",
+ "modified": "2023-04-24 10:03:51.677141",
  "modified_by": "Administrator",
  "module": "Barcode Updation",
- "name": "Item Tag Print",
+ "name": "Item Tag Offer Print",
  "owner": "Administrator",
  "permissions": [
   {
