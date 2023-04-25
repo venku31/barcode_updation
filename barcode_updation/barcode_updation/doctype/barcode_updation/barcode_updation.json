@@ -17,6 +17,11 @@
   "barcode_uom",
   "update_barcode",
   "update",
+  "column_break_dnalr",
+  "price_list",
+  "price_list_rate",
+  "price_update",
+  "update_price",
   "sec_break",
   "item_image",
   "update_image",
@@ -46,6 +51,7 @@
   {
    "fieldname": "item_barcode",
    "fieldtype": "Data",
+   "ignore_user_permissions": 1,
    "label": "Item Barcode"
   },
   {
@@ -119,6 +125,7 @@
    "label": "Update image"
   },
   {
+   "default": "Pcs",
    "fetch_from": "item.stock_uom",
    "fetch_if_empty": 1,
    "fieldname": "barcode_uom",
@@ -142,12 +149,39 @@
    "fieldtype": "Data",
    "label": "Verified By",
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_dnalr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Premium Shop Selling",
+   "fieldname": "price_list",
+   "fieldtype": "Link",
+   "label": "Price List",
+   "options": "Price List"
+  },
+  {
+   "fieldname": "price_list_rate",
+   "fieldtype": "Currency",
+   "label": "Price List rate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "price_update",
+   "fieldtype": "Currency",
+   "label": "Price Update"
+  },
+  {
+   "fieldname": "update_price",
+   "fieldtype": "Button",
+   "label": "Update Price"
   }
  ],
  "hide_toolbar": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-04-12 10:31:43.063573",
+ "modified": "2023-04-25 20:43:40.215848",
  "modified_by": "Administrator",
  "module": "Barcode Updation",
  "name": "Barcode Updation",

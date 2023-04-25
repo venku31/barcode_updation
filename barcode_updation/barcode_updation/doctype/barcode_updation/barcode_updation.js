@@ -70,10 +70,11 @@ frappe.ui.form.on('Barcode Updation', {
 				filters = { ...filters, ...{ barcode: frm.doc.item_barcode }};
 			}
 			frappe.call({
-				method: 'erpnext.stock.doctype.quick_stock_balance.quick_stock_balance.get_stock_item_details',
+				method: 'barcode_updation.barcode_updation.doctype.barcode_updation.barcode_updation.get_stock_item_details',
 				args: filters,
 				callback: (r) => {
 					if (r.message) {
+						console.log(r.message)
 						let fields = ['item', 'qty', 'image'];
 						if (!r.message['barcodes'].includes(frm.doc.item_barcode)) {
 							frm.doc.item_barcode = '';
@@ -123,5 +124,115 @@ frappe.ui.form.on('Barcode Updation', {
 					}
 				 })  
 				}
-			}	
+			},
+			update_price: (frm) => {
+				if (frm.doc.price_update>0){
+					frappe.call({
+						method: 'barcode_updation.barcode_updation.doctype.barcode_updation.barcode_updation.update_price',
+						args: {
+						   'item' : frm.doc.item,
+						   'price_list' : frm.doc.price_list,
+						   'uom':frm.doc.barcode_uom,
+						   'price_list_rate':frm.doc.price_update,
+						   'price':frm.doc.price_list_rate,
+						},
+						callback(r) {
+						   if (r.message){
+							  console.log(r.message)
+						
+						   }
+						}
+					 })  
+					}
+				},
+			
 });
+
+frappe.ui.form.on('Barcode Updation', {
+	item(frm) {
+	get_barcode(frm);
+	get_item_price(frm);
+	cur_frm.refresh()
+	},
+	price_list(frm) {
+	get_price(frm) ;
+	}
+	// barcode_uom(frm) {
+	// get_price(frm) ;
+	//}
+})
+function get_barcode(frm) {
+	console.log("1")
+	frappe.call({
+	  "method": "barcode_updation.api.get_barcode",
+	  "args": {
+		"item": frm.doc.item,
+	   },
+	   callback(r) {
+		if (r.message){
+		   console.log(r.message)
+		   // cur_frm.set_value("purchase_receipt", r.message);
+		var barcode = r.message[0].barcode
+		}
+		cur_frm.set_value("item_barcode", barcode);
+		// frappe.db.set_value("Website Item",cur_frm.doc.name,"barcode", barcode);
+		cur_frm.refresh_fields()
+	 }
+	 
+  })  
+}
+function get_item_price(frm) {
+	console.log("1")
+	frappe.call({
+	  "method": "barcode_updation.barcode_updation.doctype.barcode_updation.barcode_updation.get_item_price",
+	  "args": {
+		"item": frm.doc.item,
+		 },
+	   callback(r) {
+		if (r.message){
+		   console.log(r.message)
+		   // cur_frm.set_value("purchase_receipt", r.message);
+		var price = r.message[0].price_list_rate
+		var price_list = r.message[0].price_list
+		cur_frm.set_value("price_list_rate", price);
+		cur_frm.set_value("price_list", price_list);
+		}
+		else {
+			cur_frm.set_value("price_list_rate", 0);
+		}
+		cur_frm.refresh_fields()
+	 }
+	 
+  })  
+}
+
+  function get_price(frm) {
+	console.log("1")
+	frappe.call({
+	  "method": "barcode_updation.barcode_updation.doctype.barcode_updation.barcode_updation.get_price",
+	  "args": {
+		"item": frm.doc.item,
+		"uom": frm.doc.barcode_uom,
+		"price_list": frm.doc.price_list,
+		 },
+	   callback(r) {
+		cur_frm.set_value("price_list_rate", 0);
+		if (r.message){
+		   console.log(r.message)
+		   // cur_frm.set_value("purchase_receipt", r.message);
+		var price = r.message[0].price_list_rate 
+		cur_frm.set_value("price_list_rate", price);
+		}
+		
+		else {
+			cur_frm.set_value("price_list_rate", 0);
+		}
+		cur_frm.refresh_fields()
+	 }
+	 
+  })  
+
+
+
+
+}
