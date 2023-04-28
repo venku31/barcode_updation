@@ -2,17 +2,18 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Item Tag Offer Print', {
-	item_group : function(frm){
+	get_data : function(frm){
 		get_offer_item(frm);
-		cur_frm.refresh_fields()
+		// get_country_offer_item(frm);
+		// cur_frm.refresh_fields()
 		},
-	country : function(frm){
-		get_country_offer_item(frm);
-		cur_frm.refresh_fields()
-		},
+	// country : function(frm){
+	// 	get_country_offer_item(frm);
+	// 	// cur_frm.refresh_fields()
+	// 	},
 	item : function(frm){
 		get_offer_item_det(frm);
-		cur_frm.refresh_fields()
+		// cur_frm.refresh_fields()
 		},
 });
 

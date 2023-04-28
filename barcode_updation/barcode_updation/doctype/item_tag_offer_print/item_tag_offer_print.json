@@ -94,7 +94,6 @@
   {
    "fieldname": "get_data",
    "fieldtype": "Button",
-   "hidden": 1,
    "label": "Get Data"
   },
   {
@@ -158,7 +157,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-24 10:03:51.677141",
+ "modified": "2023-04-28 20:58:14.765437",
  "modified_by": "Administrator",
  "module": "Barcode Updation",
  "name": "Item Tag Offer Print",
