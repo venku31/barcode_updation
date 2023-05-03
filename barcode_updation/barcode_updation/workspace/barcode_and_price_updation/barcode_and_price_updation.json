@@ -26,6 +26,15 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Barcode Updation Settings",
+   "link_to": "Barcode Updation settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Stock Check",
    "link_to": "Stock Check",
    "link_type": "DocType",
@@ -51,7 +60,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-04-28 21:19:36.291494",
+ "modified": "2023-05-03 20:43:19.049582",
  "modified_by": "Administrator",
  "module": "Barcode Updation",
  "name": "Barcode and Price Updation",

@@ -41,29 +41,30 @@ def add_item_image(item_code,image):
 
 @frappe.whitelist()
 def get_stock_item_details(warehouse, date, item=None, barcode=None):
-    out = {}
-    if barcode:
-        out["item"] = frappe.db.get_value(
-            "Item Barcode", filters={"barcode": barcode}, fieldname=["parent"]
-        )
-        if not out["item"]:
-            frappe.throw(_("Invalid Barcode. There is no Item attached to this barcode."))
-    else:
-        out["item"] = item
+	out = {}
+	if barcode:
+		out["item"] = frappe.db.get_value(
+			"Item Barcode", filters={"barcode": barcode}, fieldname=["parent"]
+		)
+		if not out["item"]:
+			frappe.throw(_("Invalid Barcode. There is no Item attached to this barcode."))
+	else:
+		out["item"] = item
 
-    barcodes = frappe.db.get_values(
-        "Item Barcode", filters={"parent": out["item"]}, fieldname=["barcode"]
-    )
+	barcodes = frappe.db.get_values(
+		"Item Barcode", filters={"parent": out["item"]}, fieldname=["barcode"]
+	)
 
-    out["barcodes"] = [x[0] for x in barcodes]
-    out["qty"] = get_stock_balance(out["item"], warehouse, date)
-    out["value"] = get_stock_value_on(warehouse, date, out["item"])
-    out["image"] = frappe.db.get_value("Item", filters={"name": out["item"]}, fieldname=["image"])
-    return out
+	out["barcodes"] = [x[0] for x in barcodes]
+	out["qty"] = get_stock_balance(out["item"], warehouse, date)
+	out["value"] = get_stock_value_on(warehouse, date, out["item"])
+	out["image"] = frappe.db.get_value("Item", filters={"name": out["item"]}, fieldname=["image"])
+	return out
     
 @frappe.whitelist()
 def get_item_price(item):
-    fields = frappe.get_all('Item Price', filters={'item_code':item,"uom":"Pcs","price_list":"Premium Shop Selling"}, fields=['price_list','price_list_rate',],limit =1)
+    default_price_list = frappe.db.get_single_value("Barcode Updation Settings", "default_price_list")
+    fields = frappe.get_all('Item Price', filters={'item_code':item,"uom":"Pcs","price_list":default_price_list}, fields=['price_list','price_list_rate',],limit =1)
     return fields
 
 @frappe.whitelist()
@@ -74,7 +75,9 @@ def get_price(item,price_list,uom):
 @frappe.whitelist()
 def update_price(item,price_list,uom,price_list_rate,price):
     # item = frappe.get_doc('Item Price', {"item_code":item,"price_list":price_list,"uom":uom})
-    if (int(price)>0) :
+    if price > str(0):
+    # itemprice = frappe.get_doc('Item Price', {"item_code":item,"price_list":price_list,"uom":uom})
+    # if itemprice :
         item = frappe.get_doc('Item Price', {"item_code":item,"price_list":price_list,"uom":uom})
         item.price_list_rate = price_list_rate
         item.save(ignore_permissions=True)

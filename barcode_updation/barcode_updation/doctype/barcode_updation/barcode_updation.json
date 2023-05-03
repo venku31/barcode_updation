@@ -44,9 +44,7 @@
    "default": "Today",
    "fieldname": "date",
    "fieldtype": "Date",
-   "in_list_view": 1,
-   "label": "Date",
-   "reqd": 1
+   "label": "Date"
   },
   {
    "fieldname": "item_barcode",
@@ -155,7 +153,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "default": "Premium Shop Selling",
    "fieldname": "price_list",
    "fieldtype": "Link",
    "label": "Price List",
@@ -173,6 +170,7 @@
    "label": "Price Update"
   },
   {
+   "depends_on": "eval:doc.price_update",
    "fieldname": "update_price",
    "fieldtype": "Button",
    "label": "Update Price"
@@ -181,7 +179,7 @@
  "hide_toolbar": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-04-25 20:43:40.215848",
+ "modified": "2023-05-03 20:45:42.517285",
  "modified_by": "Administrator",
  "module": "Barcode Updation",
  "name": "Barcode Updation",

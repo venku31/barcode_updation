@@ -70,11 +70,10 @@ frappe.ui.form.on('Barcode Updation', {
 				filters = { ...filters, ...{ barcode: frm.doc.item_barcode }};
 			}
 			frappe.call({
-				method: 'barcode_updation.barcode_updation.doctype.barcode_updation.barcode_updation.get_stock_item_details',
+				method: 'erpnext.stock.doctype.quick_stock_balance.quick_stock_balance.get_stock_item_details',
 				args: filters,
 				callback: (r) => {
 					if (r.message) {
-						console.log(r.message)
 						let fields = ['item', 'qty', 'image'];
 						if (!r.message['barcodes'].includes(frm.doc.item_barcode)) {
 							frm.doc.item_barcode = '';
