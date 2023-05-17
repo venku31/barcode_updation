@@ -9,6 +9,9 @@ frappe.ui.form.on('Barcode Updation', {
 			}
 		});
 	},
+		onload(frm) {
+		 frm.set_value("date", frappe.datetime.nowdate());   
+		},
 
 	make_custom_stock_report_button: (frm) => {
 		if (frm.doc.item) {

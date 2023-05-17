@@ -18,6 +18,7 @@
   "update_barcode",
   "update",
   "column_break_dnalr",
+  "last_purchase_rate",
   "price_list",
   "price_list_rate",
   "price_update",
@@ -174,12 +175,19 @@
    "fieldname": "update_price",
    "fieldtype": "Button",
    "label": "Update Price"
+  },
+  {
+   "fetch_from": "item.last_purchase_rate",
+   "fieldname": "last_purchase_rate",
+   "fieldtype": "Currency",
+   "label": "Last Purchase Rate",
+   "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-05-03 20:45:42.517285",
+ "modified": "2023-05-17 17:13:39.254784",
  "modified_by": "Administrator",
  "module": "Barcode Updation",
  "name": "Barcode Updation",
