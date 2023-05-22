@@ -111,12 +111,18 @@ fixtures = [
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
+doc_events = {
 #	"*": {
 #		"on_update": "method",
 #		"on_cancel": "method",
 #		"on_trash": "method"
-#	}
+"POS Discount Allow": {
+		"on_submit": "barcode_updation.barcode_updation.doctype.pos_discount_allow.pos_discount_allow.pos_discount_allow",
+	},
+"Sales Invoice": {
+		"on_submit": "barcode_updation.barcode_updation.doctype.pos_discount_allow.pos_discount_allow.pos_discount_disable",
+	},
+}
 # }
 
 # Scheduled Tasks
