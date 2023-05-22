@@ -15,31 +15,34 @@
   "before",
   "country",
   "website_image",
-  "barcode"
+  "barcode",
+  "discount_type",
+  "discount_amount",
+  "discount_percentage",
+  "price_list",
+  "warehouse"
  ],
  "fields": [
   {
    "columns": 2,
    "fieldname": "website_item_name",
    "fieldtype": "Link",
-   "in_list_view": 1,
+   "hidden": 1,
    "label": "website item",
-   "options": "Website Item",
-   "reqd": 1
+   "options": "Website Item"
   },
   {
    "columns": 1,
-   "fetch_from": "website_item_name.item_code",
    "fieldname": "item_code",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Item Code",
    "options": "Item",
-   "read_only": 1
+   "read_only": 1,
+   "reqd": 1
   },
   {
    "columns": 2,
-   "fetch_from": "website_item_name.description",
    "fieldname": "description",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -82,7 +85,7 @@
    "read_only": 1
   },
   {
-   "fetch_from": "website_item_name.website_image",
+   "fetch_from": "item_code.website_image",
    "fieldname": "website_image",
    "fieldtype": "Attach Image",
    "label": "Website Image"
@@ -100,12 +103,40 @@
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Before"
+  },
+  {
+   "fieldname": "discount_type",
+   "fieldtype": "Data",
+   "label": "Discount Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "discount_amount",
+   "fieldtype": "Data",
+   "label": "Discount Amount"
+  },
+  {
+   "fieldname": "discount_percentage",
+   "fieldtype": "Data",
+   "label": "Discount Percentage"
+  },
+  {
+   "fieldname": "price_list",
+   "fieldtype": "Link",
+   "label": "Price List",
+   "options": "Price List"
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-04-24 12:19:06.094991",
+ "modified": "2023-05-22 09:43:41.512378",
  "modified_by": "Administrator",
  "module": "Barcode Updation",
  "name": "Item Tag Offer Details",

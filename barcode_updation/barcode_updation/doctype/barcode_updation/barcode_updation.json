@@ -105,6 +105,7 @@
    "fieldname": "qty",
    "fieldtype": "Float",
    "label": "Available Quantity",
+   "permlevel": 1,
    "read_only": 1
   },
   {
@@ -181,13 +182,14 @@
    "fieldname": "last_purchase_rate",
    "fieldtype": "Currency",
    "label": "Last Purchase Rate",
+   "permlevel": 1,
    "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-05-17 17:13:39.254784",
+ "modified": "2023-05-22 10:55:07.789217",
  "modified_by": "Administrator",
  "module": "Barcode Updation",
  "name": "Barcode Updation",

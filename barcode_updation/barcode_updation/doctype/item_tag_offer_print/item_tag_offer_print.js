@@ -32,13 +32,18 @@ function get_offer_item(frm) {
 		r.message.forEach(fields => {
 		  var child = cur_frm.add_child("item_tag_offer_details");
 		  frappe.model.set_value(child.doctype, child.name, "item_code", fields.item_code)
-		  frappe.model.set_value(child.doctype, child.name, "website_item_name", fields.website_item)
-		  frappe.model.set_value(child.doctype, child.name, "description", fields.web_item_name)
-		  frappe.model.set_value(child.doctype, child.name, "website_image", fields.website_image)
-		  frappe.model.set_value(child.doctype, child.name, "price", fields.price_list_rate)
-		  frappe.model.set_value(child.doctype, child.name, "before", fields.before)
-		  frappe.model.set_value(child.doctype, child.name, "uom", fields.uom)
-		  frappe.model.set_value(child.doctype, child.name, "country", fields.country)
+		  //   frappe.model.set_value(child.doctype, child.name, "website_item_name", fields.item_name)
+			frappe.model.set_value(child.doctype, child.name, "description", fields.item_name)
+			frappe.model.set_value(child.doctype, child.name, "website_image", fields.image)
+			frappe.model.set_value(child.doctype, child.name, "price", fields.price_list_rate)
+			frappe.model.set_value(child.doctype, child.name, "before", fields.before)
+			frappe.model.set_value(child.doctype, child.name, "uom", fields.stock_uom)
+			frappe.model.set_value(child.doctype, child.name, "country", fields.country)
+			frappe.model.set_value(child.doctype, child.name, "discount_type", fields.discount_type)
+			frappe.model.set_value(child.doctype, child.name, "discount_amount", fields.discount_amount)
+			frappe.model.set_value(child.doctype, child.name, "discount_percentage", fields.discount_percentage)
+			frappe.model.set_value(child.doctype, child.name, "warehouse", fields.warehouse)
+			frappe.model.set_value(child.doctype, child.name, "price_list", fields.price_list)
 		  });
 		cur_frm.refresh_fields()
 			
@@ -93,13 +98,18 @@ function get_offer_item_det(frm) {
 		r.message.forEach(fields => {
 		  var child = cur_frm.add_child("item_tag_offer_details");
 		  frappe.model.set_value(child.doctype, child.name, "item_code", fields.item_code)
-		  frappe.model.set_value(child.doctype, child.name, "website_item_name", fields.website_item)
-		  frappe.model.set_value(child.doctype, child.name, "description", fields.web_item_name)
-		  frappe.model.set_value(child.doctype, child.name, "website_image", fields.website_image)
+		//   frappe.model.set_value(child.doctype, child.name, "website_item_name", fields.item_name)
+		  frappe.model.set_value(child.doctype, child.name, "description", fields.item_name)
+		  frappe.model.set_value(child.doctype, child.name, "website_image", fields.image)
 		  frappe.model.set_value(child.doctype, child.name, "price", fields.price_list_rate)
 		  frappe.model.set_value(child.doctype, child.name, "before", fields.before)
-		  frappe.model.set_value(child.doctype, child.name, "uom", fields.uom)
+		  frappe.model.set_value(child.doctype, child.name, "uom", fields.stock_uom)
 		  frappe.model.set_value(child.doctype, child.name, "country", fields.country)
+		  frappe.model.set_value(child.doctype, child.name, "discount_type", fields.discount_type)
+		  frappe.model.set_value(child.doctype, child.name, "discount_amount", fields.discount_amount)
+		  frappe.model.set_value(child.doctype, child.name, "discount_percentage", fields.discount_percentage)
+		  frappe.model.set_value(child.doctype, child.name, "warehouse", fields.warehouse)
+		  frappe.model.set_value(child.doctype, child.name, "price_list", fields.price_list)
 		  });
 		cur_frm.refresh_fields()
 			
