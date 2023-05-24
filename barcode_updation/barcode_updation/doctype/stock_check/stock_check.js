@@ -44,6 +44,7 @@ function fetch_item_entry(frm, cdt, cdn) {
 frappe.ui.form.on('Stock Check Details', {
 qty: function(frm, cdt, cdn) {
 	total_qty(frm, cdt, cdn)
+	frm.save();
 	}
 })
 function total_qty(frm, cdt, cdn) {
