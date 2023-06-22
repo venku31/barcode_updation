@@ -10,6 +10,7 @@
   "pos_profile",
   "allow_discount",
   "allow_edit_rate",
+  "allow_return",
   "warehouse",
   "company",
   "date",
@@ -79,12 +80,18 @@
    "fieldtype": "Time",
    "label": "Time",
    "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_return",
+   "fieldtype": "Check",
+   "label": "Allow Return"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-05-22 20:42:33.387291",
+ "modified": "2023-06-22 07:06:21.065449",
  "modified_by": "Administrator",
  "module": "Barcode Updation",
  "name": "POS Discount Allow",
