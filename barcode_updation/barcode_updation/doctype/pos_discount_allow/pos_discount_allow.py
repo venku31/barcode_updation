@@ -10,7 +10,7 @@ class POSDiscountAllow(Document):
 
 @frappe.whitelist()
 def pos_discount_allow(doc,handler=""):
-    if doc.allow_discount or doc.allow_edit_rate or doc.item.posa_allow_return:
+    if doc.allow_discount or doc.allow_edit_rate or doc.allow_return:
         item = frappe.get_doc('POS Profile', {"name":doc.pos_profile})
         item.posa_allow_user_to_edit_additional_discount = doc.allow_discount
         item.posa_use_percentage_discount = doc.allow_discount
